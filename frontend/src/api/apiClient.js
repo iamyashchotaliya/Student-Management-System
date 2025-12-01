@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'student-management-system-production-2dbc.up.railway.app'
+  baseURL: 'https://student-management-system-production-2dbc.up.railway.app/'
 });
 
 // Add token in header
