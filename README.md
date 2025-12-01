@@ -52,29 +52,29 @@ A complete **Student Management System** built using MERN Stack with authenticat
 
 ## 🗂 Project Structure
 
+```text
 student-management-system/
-│
 ├── backend/
-│ ├── config/
-│ ├── middleware/
-│ ├── models/
-│ ├── routes/
-│ ├── .env
-│ ├── package.json
-│ ├── server.js
+│   ├── config/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── .env
+│   ├── package.json
+│   ├── server.js
 │
 ├── frontend/
-│ ├── public/
-│ ├── src/
-│ │ ├── api/
-│ │ ├── assets/
-│ │ ├── components/
-│ │ ├── pages/
-│ │ ├── App.jsx
-│ │ ├── index.css
-│ │ ├── main.jsx
-│ ├── vite.config.js
-│ ├── package.json
+│   ├── public/
+│   ├── src/
+│   │   ├── api/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── App.jsx
+│   │   ├── index.css
+│   │   ├── main.jsx
+│   ├── vite.config.js
+│   ├── package.json
 │
 ├── .gitignore
 └── README.md
