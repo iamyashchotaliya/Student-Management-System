@@ -1,0 +1,142 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #050c20;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.nav-links a,
+.nav-links button {
+  margin-left: 15px;
+  color: white;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.desktop {
+  display: flex;
+}
+
+.hamburger {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* ✅ MOBILE FULLSCREEN MENU */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 10, 30, 0.92);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  transform: scale(0);
+  transition: 0.3s ease;
+  z-index: 2000;
+}
+
+.mobile-menu.show {
+  transform: scale(1);
+}
+
+.mobile-menu a {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.logout-btn {
+  background: #3b82f6;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 8px;
+  border: none;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 25px;
+  background: none;
+  color: white;
+  border: none;
+}
+
+/* RESPONSIVE */
+@media (max-width:768px) {
+  .desktop {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* ===== MOBILE NAVBAR PRO FIX ===== */
+
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-text {
+  font-weight: 600;
+  color: #93c5fd;
+}
+
+/* ✅ ROLE BADGE */
+.role-badge {
+  margin-left: 10px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Admin badge */
+.role-badge.admin {
+  background: linear-gradient(to right, #ef4444, #f97316);
+  color: white;
+}
+
+/* Teacher badge */
+.role-badge.teacher {
+  background: linear-gradient(to right, #10b981, #22c55e);
+  color: white;
+}
+
+/* ✅ Mobile menu header */
+.mobile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+  padding-bottom: 12px;
+}
+
+.app-name {
+  font-weight: 600;
+  font-size: 18px;
+  color: #93c5fd;
+}
