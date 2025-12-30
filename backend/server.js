@@ -8,7 +8,16 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:3000",
+    "https://studentms-system.vercel.app"
+  ],
+  credentials: true
+}));
+
+app.options('*', cors());
+
 app.use(express.json());
 
 app.get('/', (req, res) => {
