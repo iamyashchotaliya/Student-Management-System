@@ -8,31 +8,25 @@ connectDB();
 
 const app = express();
 
+// ✅ CORRECT CORS
 app.use(cors({
-  origin: [
-    "http://localhost:3000",
-    "https://studentms-system.vercel.app"
-  ],
-  credentials: true
+  origin: "https://studentms-system.vercel.app",
+  credentials: true,
 }));
-
-app.options('*', cors());
 
 app.use(express.json());
 
+// test route
 app.get('/', (req, res) => {
   res.send('Student Management API is running...');
 });
 
-app.use('/api/users', require('./routes/userRoutes'))
-
-// 🔐 Auth + Students routes
 app.use('/api/auth', require('./routes/authRoutes'));
+app.use('/api/users', require('./routes/userRoutes'));
 app.use('/api/students', require('./routes/studentRoutes'));
-
-// ✅ Attendance routes (ye line add karo)
 app.use('/api/attendance', require('./routes/attendanceRoutes'));
 
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => console.log(`Server running on port ${PORT} ✅`));
-
+const PORT = process.env.PORT || 10000;
+app.listen(PORT, () =>
+  console.log(`Server running on port ${PORT} ✅`)
+);
