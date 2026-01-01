@@ -14,7 +14,16 @@ router.post('/', async (req, res) => {
     const student = await Student.create(req.body);
     res.json(student);
   } catch (err) {
-    res.status(400).json({ message: 'Error creating student', error: err.message });
+    if (err.code === 11000) {
+      return res.status(400).json({
+        message: "Email already exists"
+      });
+    }
+
+    res.status(400).json({
+      message: "Error creating student",
+      error: err.message
+    });
   }
 });
 
