@@ -12,11 +12,20 @@ router.post('/', async (req, res) => {
   try {
     const { student, date, status } = req.body;
 
-    // ✅ Check if already exists
-    let record = await Attendance.findOne({ student, date });
+    if (!student || !date || !status) {
+      return res.status(400).json({
+        message: "Student, date and status are required"
+      });
+    }
+
+    const attendanceDate = new Date(date);
+
+    let record = await Attendance.findOne({
+      student,
+      date: attendanceDate
+    });
 
     if (record) {
-      // ✅ UPDATE if exists
       record.status = status;
       await record.save();
 
@@ -26,8 +35,12 @@ router.post('/', async (req, res) => {
       });
     }
 
-    // ✅ CREATE if not exists
-    record = await Attendance.create({ student, date, status });
+    record = await Attendance.create({
+      student,
+      date: attendanceDate,
+      status
+    });
+
     res.json({
       message: 'Attendance saved ✅',
       data: record
